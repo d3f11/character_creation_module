@@ -2,6 +2,7 @@ from random import randint
 
 
 def attack(char_name, char_class):
+    """Функция, где вычисляется урон."""
     if char_class == 'warrior':
         return (f'{char_name} нанёс противнику урон, равный '
                 f'{5 + randint(3, 5)}')
@@ -14,6 +15,7 @@ def attack(char_name, char_class):
 
 
 def defence(char_name, char_class):
+    """Функция, где вычисляется блокировка урона."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} ед. урона')
     if char_class == 'mage':
@@ -23,6 +25,7 @@ def defence(char_name, char_class):
 
 
 def special(char_name, char_class):
+    """Функция применения умений."""
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение '
                 f'«Выносливость {80 + 25}»')
@@ -33,6 +36,7 @@ def special(char_name, char_class):
 
 
 def start_training(char_name, char_class):
+    """Функция начала тренировки."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — великий мастер ближнего боя.')
     if char_class == 'mage':
@@ -57,6 +61,7 @@ def start_training(char_name, char_class):
 
 
 def choice_char_class():
+    """Функция выбора класса."""
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
@@ -79,6 +84,7 @@ def choice_char_class():
 
 
 def main():
+    """Приветствует , принимает название игрока и его класс."""
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name = input('...назови себя: ')
@@ -88,5 +94,3 @@ def main():
     print('Воитель, Маг, Лекарь')
     char_class = choice_char_class()
     print(start_training(char_name, char_class))
-
-main()
